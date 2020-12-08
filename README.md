@@ -29,7 +29,7 @@ Then you need some container registry to save the images you build ... then:
     $ oc create -f ~/Downloads/my-quay-org-myquayrobot-secret.yml --namespace=myproject
     ```
 
-# Create Image
+## Create Image
 
 Now use the **Dockerfile** to create an image and upload it to [quay.io](https://quay.io/):
 
@@ -38,7 +38,7 @@ $ sudo podman build . -t quay.io/my-quay-org/my-quay-repo
 $ sudo podman push quay.io/my-quay-org/my-quay-repo
 ```
 
-# Run the image in CRC
+## Run the image in CRC
 
 ```
 $ oc secrets link default my-quay-org-myquayrobot-pull-secret --for pull
@@ -49,7 +49,7 @@ $ oc logs my-quay-repo-1-hkdlb
 
 Note the name "my-quay-repo-1-hkdlb" was derived from the "oc get pods" output
 
-# Config Maps and Secrets
+## Config Maps and Secrets
 
 We add some secrets as files into the DeploymentConfig:
 
